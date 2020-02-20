@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/win.jpg" type="Texture" id=1]
+
+[node name="Victory" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 515.641, 388.295 )
+scale = Vector2( 1.20649, 1.60575 )
+texture = ExtResource( 1 )

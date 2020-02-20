@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/shipBlue_manned.png" type="Texture" id=2]
+
+[node name="Enemy4" type="KinematicBody2D"]
+position = Vector2( -131.875, -45.2824 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.3, 0.3 )
+polygon = PoolVector2Array( 9, -62.6, 20, -55.6, 20, -53.2, 24, -48.2, 24, -30.5, 22.1, -30.5, 15, -19.8, 15, -16.5, 15.8, -11.3, 42.4, 0.5, 53, 0.5, 53, 4.5, 54.2, 16.5, 50.3, 16.5, 21.3, 25.5, 17.8, 25.5, 9, 23.9, -2, 27.2, -2, 25.5, -22, 25.5, -22, 24, -54, 16.1, -54, 11.4, -52.8, 0.5, -44, 0.5, -17, -10.9, -17, -11.6, -16.2, -18.8, -24, -28.8, -24, -32.1, -26.4, -45.5, -24.4, -45.5, -20.4, -56.5, -18.5, -56.5, -10, -62.5, -10, -64.5, 9, -64.5 )
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
